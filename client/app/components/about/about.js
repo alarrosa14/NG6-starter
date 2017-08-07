@@ -1,5 +1,5 @@
 import angular from 'angular';
-import uiRouter from 'angular-ui-router';
+import uiRouter from '@uirouter/angularjs';
 import aboutComponent from './about.component';
 
 let aboutModule = angular.module('about', [
@@ -16,7 +16,7 @@ let aboutModule = angular.module('about', [
 })
 
 .component('about', aboutComponent)
-  
+
 .name;
 
 export default aboutModule;
