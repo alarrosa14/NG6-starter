@@ -1,0 +1,9 @@
+<div class="timeline hidden-sm hidden-xs">
+  <span class="pointer" ng-repeat="period in ['Aug 2017', 'Jul 2017', 'Jun 2017']" ng-class="{ selected: $ctrl.isSelectedPeriod(period) }" ng-click="$ctrl.setSelectedPeriod(period)">
+    <div class="pick-month">
+      <div class="circle pull-left"></div>
+      <span class="month">{{ period }}</span>
+    </div>
+    <div ng-if="!$index.$last" class="month-divider"></div>
+  </span>
+</div>

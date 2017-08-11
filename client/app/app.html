@@ -1,4 +1,14 @@
-<!-- Place all UI elements intended to be present across all routes in this file -->
-<div class="app">
-  <div ui-view></div>
+<div class="drawer" snap-drawer>
+  <div class="drawer-view" ui-view="drawer"></div>
+</div>
+
+<div class="content" snap-content>
+  <div ui-view="header" class="content-header anim-in-out anim-fade">
+  </div>
+
+  <div ui-view="body" class="content-body anim-in-out anim-fade">
+  </div>
+
+  <div ui-view="footer">
+  </div>
 </div>

@@ -6,6 +6,7 @@ module.exports = {
   devtool: 'source-map',
   entry: {
     app: [
+      'bootstrap-loader',
       'babel-polyfill',
       path.join(__dirname, 'client', 'app/app.js')
     ]
@@ -15,7 +16,8 @@ module.exports = {
        { test: /\.js$/, exclude: [/app\/lib/, /node_modules/], loader: 'ng-annotate-loader!babel-loader' },
        { test: /\.html$/, loader: 'raw-loader' },
        { test: /\.(scss|sass)$/, loader: 'style-loader!css-loader!sass-loader' },
-       { test: /\.css$/, loader: 'style-loader!css-loader' }
+       { test: /\.css$/, loader: 'style-loader!css-loader' },
+       { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
     ]
   },
   plugins: [
@@ -34,6 +36,11 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: "vendor",
       minChunks: module => /node_modules/.test(module.resource)
+    }),
+
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jQuery"
     })
   ]
 };

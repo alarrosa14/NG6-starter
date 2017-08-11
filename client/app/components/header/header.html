@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="display-flex justify-content-space-between">
+    <div class="flex-1">
+      <!-- <img snap-toggle="left" snap-dragger src="images/sm-quick-access.png" class="menu-ico pointer"> -->
+      <!-- <img src="images/compas-logo@2x-1.png" class="logo pointer" ui-sref="index.passport.tools"> -->
+      <!-- <animated-dropdown items="headerController.toolDropdownItems" on-select="headerController.toolDropdownItemSelected(item)"></animated-dropdown> -->
+    </div>
+    <div class="one-line-ellipsis title hidden-xs flex-1">
+      {{ $ctrl.title || 'TITLE' }}
+    </div>
+    <div class="user flex-1">
+      <span class="pointer" ui-sref="index.passport.tools">
+      {{ $ctrl.currentUser.get("firstName") }} {{ $ctrl.currentUser.get("lastName") }} <img ng-src="{{ $ctrl.currentUser.get('avatar').url() }}" class="photo hidden-xs">
+      </span>
+    </div>
+  </div>
+</div>

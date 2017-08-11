@@ -1,10 +1,9 @@
 import angular from 'angular';
-import Home from './home/home';
-import About from './about/about';
+
+import ReadinessModule from './readiness/readiness';
 
 let componentModule = angular.module('app.components', [
-  Home,
-  About
+  ReadinessModule
 ])
 
 .name;

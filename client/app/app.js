@@ -1,23 +1,31 @@
 import angular from 'angular';
 import uiRouter from '@uirouter/angularjs';
+
+import 'snap.js/dist/snap';
+import 'angular-snap/angular-snap';
+import 'angular-snap/angular-snap.css';
+
 import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
+
 import 'normalize.css';
 
 angular.module('app', [
     uiRouter,
+
     Common,
-    Components
+    Components,
+
+    'snap'
   ])
-  .config(($locationProvider) => {
+
+  .config(($locationProvider, snapRemoteProvider) => {
     "ngInject";
-    // @see: https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions
-    // #how-to-configure-your-server-to-work-with-html5mode
+
     $locationProvider.html5Mode(true).hashPrefix('!');
 
-
-
+    snapRemoteProvider.globalOptions.disable = 'right';
   })
 
   .component('app', AppComponent);
